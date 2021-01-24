@@ -86,7 +86,7 @@ namespace Movies_Api.Controllers
                     - Adds a Location header to the response. The Location header specifies the URI of the newly created movie item. For more information, see 10.2.2 201 Created.
                     - References the Movie action to create the Location header's URI. The C# nameof keyword is used to avoid hard-coding the action name in the CreatedAtAction call.
             */
-            return CreatedAtAction(nameof(GetMovie), new { IDbContextFactory = movie.Id }, movie);
+            return CreatedAtAction(nameof(GetMovie), new { id = movie.Id }, movie);
         }
 
         // DELETE: api/Movies/5
