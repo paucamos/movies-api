@@ -26,7 +26,7 @@ namespace Movies_Api
                     builder.WithOrigins("http://localhost:4200");
                 });
             });
-            services.AddDbContext<MovieContext>(opt => opt.UseInMemoryDatabase("Movies"));
+            services.AddDbContext<MovieContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("MoviesDb")));
             services.AddControllers();
         }
 
