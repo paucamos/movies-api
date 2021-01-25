@@ -8,5 +8,14 @@ namespace Movies_Api.Models
 		{
 		}
         public DbSet<Movie> Movies { get; set; }
+		public DbSet<Actor> Actors { get; set; }
+		public DbSet<MovieActor> MovieActors { get; set; }
+
+		/* Config fields
+		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+		{
+			base.OnConfiguring(optionsBuilder);
+		}
+		*/
 	}
 }

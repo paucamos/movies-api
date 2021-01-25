@@ -1,9 +1,11 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Movies_Api.Models;
+
 
 namespace Movies_Api.Controllers
 {
@@ -40,7 +42,7 @@ namespace Movies_Api.Controllers
         // PUT: api/Movies/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutMovie(long id, Movie movie)
+        public async Task<IActionResult> PutMovie(Guid id, Movie movie)
         {
             if (id != movie.Id)
             {
@@ -105,7 +107,7 @@ namespace Movies_Api.Controllers
             return NoContent();
         }
 
-        private bool MovieExists(long id)
+        private bool MovieExists(Guid id)
         {
             return _context.Movies.Any(e => e.Id == id);
         }
